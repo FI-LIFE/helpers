@@ -1,0 +1,39 @@
+{
+    "name": "neugen/helpers",
+    "description": "Helpers",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/FI-LIFE/helpers",
+    "authors": [
+        {
+            "name": "Evgeniy Naumenko",
+            "email": "justfilife@gmail.com",
+            "homepage": "https://neugen.ru/"
+        }
+    ],
+    "keywords": [
+        "helpers"
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.2",
+        "ext-readline": "*",
+        "ext-mbstring": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Neugen\\Helpers\\": "src/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Neugen\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.1"
+    }
+}
