@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/FI-LIFE/helpers.svg?branch=master)](https://travis-ci.org/FI-LIFE/helpers)
 ![Packagist](https://img.shields.io/packagist/l/neugen/helpers)
+![Packagist Version](https://img.shields.io/packagist/v/neugen/helpers)
+
 
 ## Install
 
