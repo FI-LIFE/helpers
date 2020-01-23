@@ -2,15 +2,16 @@
 ![Packagist](https://img.shields.io/packagist/l/neugen/helpers)
 ![Packagist Version](https://img.shields.io/packagist/v/neugen/helpers)
 
-
 ## Install
 
 ```bash
 composer require neugen/helpers
 ```
+
 ## Usage
 
 #### Neugen\Helpers\Str 
+
 ```php
 <?php
 
@@ -32,6 +33,7 @@ var_dump('This is test string'); // string(19) "This is test string"
 
 
 #### Neugen\Helpers\Cli 
+
 ```php
 <?php
 
@@ -45,5 +47,4 @@ if (!Helpers\Cli::confirm('Do you want to continue?'))
 Helpers\Cli::p('Yellow text on blue background', Helpers\Cli::T_YELLOW, Helpers\Cli::BG_BLUE);
 
 Helpers\Cli::p('Red text on yellow background', Helpers\Cli::T_RED, Helpers\Cli::BG_YELLOW);
-
 ```
