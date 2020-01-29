@@ -67,10 +67,10 @@ class Cli
      */
     static public function p($text = '', $text_color = null, $background_color = null, $eol = true)
     {
-        echo self::r($text, $text_color, $background_color);
+        print self::r($text, $text_color, $background_color);
 
         if ($eol) {
-            echo PHP_EOL;
+            print PHP_EOL;
         }
     }
 
@@ -83,8 +83,31 @@ class Cli
      */
     static public function confirm($text, $confirm_text = '[Y/N]')
     {
-        $result = trim(readline($text.' '.$confirm_text.': '));
+        self::p($text.' '.$confirm_text.': ', null, null, false);
+        $result = trim(readline());
 
         return $result === 'Y' || $result === 'y';
+    }
+
+    /**
+     * Get value from cli
+     *
+     * @param $text
+     * @param null $default
+     * @param string $end_line
+     * @return string
+     */
+    static public function get($text, $default = null, $end_line = ':')
+    {
+        $line = $text;
+
+        if ($default !== null) {
+            $line .= ' ['.self::r($default, self::T_YELLOW).']';
+        }
+
+        self::p($line.$end_line.' ', null, null, false);
+        $result = trim(readline());
+
+        return empty($result) ? $default : $result;
     }
 }
