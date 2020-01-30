@@ -4,9 +4,9 @@ require 'vendor/autoload.php';
 
 use Neugen\Helpers;
 
-$string = 'this is test string';
+$string = 'Это тестовая строка';
 
-$result = Helpers\Str::startsWith($string, 'this');
+$result = Helpers\Str::startsWith($string, 'Это');
 var_dump($result); // bool(true)
 
 $result = Helpers\Str::endsWith($string, ['string', 'number']);

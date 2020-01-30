@@ -31,7 +31,6 @@ $result = Helpers\Str::ucFirst($string);
 var_dump('This is test string'); // string(19) "This is test string"
 ```
 
-
 #### Neugen\Helpers\Cli 
 
 ```php
@@ -50,4 +49,18 @@ Helpers\Cli::p('Red text on yellow background', Helpers\Cli::T_RED, Helpers\Cli:
 
 $mail = Helpers\Cli::get('Enter email', 'example@mail.com');
 var_dump($mail); // string(16) "example@mail.com"
+```
+
+#### Neugen\Helpers\Auth 
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+use Neugen\Helpers;
+
+$result = Helpers\Auth::randomPassword();
+var_dump($result); // string(16) "...."
+
 ```
