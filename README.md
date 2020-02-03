@@ -47,7 +47,7 @@ Helpers\Cli::p('Yellow text on blue background', Helpers\Cli::T_YELLOW, Helpers\
 
 Helpers\Cli::p('Red text on yellow background', Helpers\Cli::T_RED, Helpers\Cli::BG_YELLOW);
 
-$mail = Helpers\Cli::get('Enter email', 'example@mail.com');
+$mail = Helpers\Cli::prompt('Enter email', 'example@mail.com');
 var_dump($mail); // string(16) "example@mail.com"
 ```
 
@@ -62,5 +62,4 @@ use Neugen\Helpers;
 
 $result = Helpers\Auth::randomPassword();
 var_dump($result); // string(16) "...."
-
 ```

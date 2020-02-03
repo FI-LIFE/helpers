@@ -90,14 +90,14 @@ class Cli
     }
 
     /**
-     * Get value from cli
+     * Prompt value from cli
      *
      * @param $text
      * @param null $default
      * @param string $end_line
      * @return string
      */
-    static public function get($text, $default = null, $end_line = ':')
+    static public function prompt($text, $default = null, $end_line = ':')
     {
         $line = $text;
 

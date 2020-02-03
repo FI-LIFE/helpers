@@ -6,6 +6,7 @@ class Str
 {
     /**
      * Determine if a given string starts with a given substring.
+     * c&p from Laravel Helpers
      *
      * @param  string  $haystack
      * @param  string|array  $needles
@@ -24,6 +25,7 @@ class Str
 
     /**
      * Determine if a given string ends with a given substring.
+     * c&p from Laravel Helpers
      *
      * @param  string  $haystack
      * @param  string|array  $needles
