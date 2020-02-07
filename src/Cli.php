@@ -39,7 +39,7 @@ class Cli
      *
      * @return string
      */
-    static public function r($text = '', $text_color = null, $background_color = null)
+    static public function r(string $text = '', $text_color = null, $background_color = null)
     {
         $string = "";
         $end = '';
@@ -65,7 +65,7 @@ class Cli
      * @param null $background_color Background color
      * @param bool $eol Print PHP_EOL
      */
-    static public function p($text = '', $text_color = null, $background_color = null, $eol = true)
+    static public function p(string $text = '', $text_color = null, $background_color = null, $eol = true)
     {
         print self::r($text, $text_color, $background_color);
 
@@ -81,7 +81,7 @@ class Cli
      * @param string $confirm_text
      * @return bool
      */
-    static public function confirm($text, $confirm_text = '[Y/N]')
+    static public function confirm(string $text, $confirm_text = '[Y/N]')
     {
         self::p($text.' '.$confirm_text.': ', null, null, false);
         $result = trim(readline());
@@ -97,7 +97,7 @@ class Cli
      * @param string $end_line
      * @return string
      */
-    static public function prompt($text, $default = null, $end_line = ':')
+    static public function prompt(string $text, $default = null, $end_line = ':')
     {
         $line = $text;
 
@@ -109,5 +109,28 @@ class Cli
         $result = trim(readline());
 
         return empty($result) ? $default : $result;
+    }
+
+    /**
+     * @param string $text
+     * @param $options
+     * @param string $select_text
+     * @return mixed|null
+     */
+    static public function select(string $text, $options, $select_text = 'Select')
+    {
+        self::p($text, self::T_YELLOW);
+
+        foreach ($options as $key => $option) {
+            self::p('['.self::r($key, self::T_YELLOW).'] '.$option['text']);
+        }
+
+        $selected = (int)self::prompt($select_text);
+
+        if (isset($options[$selected])) {
+            return $options[$selected]['value'];
+        }
+
+        return null;
     }
 }
